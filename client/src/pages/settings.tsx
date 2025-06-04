@@ -83,7 +83,7 @@ export default function Settings() {
         ...data,
         profileImage: profileImage
       };
-      return apiRequest("POST", "/api/settings/profile", payload);
+      return apiRequest("/api/settings/profile", "POST", payload);
     },
     onSuccess: () => {
       toast({
@@ -104,7 +104,7 @@ export default function Settings() {
 
   const updateBankingMutation = useMutation({
     mutationFn: async (data: any) => {
-      return apiRequest("POST", "/api/settings/banking", data);
+      return apiRequest("/api/settings/banking", "POST", data);
     },
     onSuccess: () => {
       toast({
